@@ -6,7 +6,7 @@ const app = express();
 // dalam hal ini endpointnya "/"
 app.get("/", (req, res) => {
   res.send("<h1>Selamat datang</h1>");
-})
+});
 
 const port = 3000;
 
