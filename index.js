@@ -1,11 +1,136 @@
 const express = require("express");
+const mySQL = require("mysql");
+const logger = require("morgan");
 
 const app = express(); 
+
+// Menambahkan logger
+app.use(logger("dev"));
+
+// Menambahkan bodyparser untuk x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }));
+
+// menambahkan parser untuk raw json
+app.use(express.json());
 
 // Membuat handler untuk endpoint,
 // dalam hal ini endpointnya "/"
 app.get("/", (req, res) => {
   res.send("<h1>Selamat datang</h1>");
+});
+
+app.get("/products", (_, res) => {
+  
+  const getAllProducts = new Promise((resolve, reject) => {
+    const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id';
+    dbSQL.query(queryString, (err, data) => {
+      if (!err) {
+        resolve(data);
+      } else {
+        reject(err);
+      }
+    })
+  });
+
+  getAllProducts.then(data => {
+    res.json(data);
+  }).catch((err) => {
+    res.json(err);
+  });
+});
+
+app.post("/products", (req, res) => {
+  // Mendapat objek request dari client
+  // Melakukan query ke db
+  // Mengirim response
+  const { body } = req;
+  const insertBody = { ...body, created_at: new Date(Date.now()), updated_at: new Date(Date.now()) }
+  const postNewProduct = new Promise((resolve, reject) => {
+    const queryString = "INSERT INTO items SET ?";
+    dbSQL.query(queryString, insertBody, (err, data) => {
+      if (!err) {
+        resolve(data);
+      } else {
+        reject(err);
+      }
+    })
+  });
+
+  postNewProduct.then(data => {
+    const resObject = {
+      data: { id: data.insertBody, ...insertBody },
+    }
+    res.json(resObject);
+  }).catch((err) => {
+    res.json(err);
+  });
+})
+
+// req params dan query
+
+// req params
+app.get("/product/:id", (req, res) => {
+  const { id } = req.params;
+  const getProduct = new Promise((resolve, reject) => {
+    const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id WHERE p.id = ?';
+    dbSQL.query(queryString, id, (err, data) => {
+      if (!err) {
+        resolve(data);
+      } else {
+        reject(err);
+      }
+    });
+  });
+
+  getProduct.then(data => {
+    if (data.length) {
+      res.json(data);
+    } else {
+      res.status(404).json({
+        msg: "Data not found"
+      })
+    }
+  }).catch(err => {
+    res.json(err);
+  })
+});
+
+// req query
+// localhost:3000/search?{query}
+app.get("/search", (req, res) => {
+  const { q } = req.query;
+  const keyword = `%${q}%`;
+  const searchProduct = new Promise((resolve, reject) => {
+    const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id WHERE p.product_name LIKE ?';
+    dbSQL.query(queryString, keyword, (err, data) => {
+      if (!err) {
+        resolve(data);
+      } else {
+        reject(err);
+      }
+    })
+  });
+
+  searchProduct
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    })
+});
+
+
+const dbSQL = mySQL.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "products"
+})
+
+dbSQL.connect((err) => {
+  if (err) throw err;
+  console.log("Database connected");
 });
 
 const port = 3000;
