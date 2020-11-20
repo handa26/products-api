@@ -2,25 +2,31 @@ const express = require("express");
 const mySQL = require("mysql");
 const logger = require("morgan");
 
-const app = express(); 
+const app = express();
 
 // Menambahkan logger
 app.use(logger("dev"));
 
 // Menambahkan bodyparser untuk x-www-form-urlencoded
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 
 // menambahkan parser untuk raw json
 app.use(express.json());
 
 // Membuat handler untuk endpoint,
 // dalam hal ini endpointnya "/"
+// @desc    Home/
+// @route   GET /
 app.get("/", (req, res) => {
   res.send("<h1>Selamat datang</h1>");
 });
 
+// @desc    Show all products
+// @route   GET /products
 app.get("/products", (_, res) => {
-  
+
   const getAllProducts = new Promise((resolve, reject) => {
     const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id';
     dbSQL.query(queryString, (err, data) => {
@@ -39,12 +45,21 @@ app.get("/products", (_, res) => {
   });
 });
 
+
+// @desc    Process add items
+// @route   POST /products
 app.post("/products", (req, res) => {
   // Mendapat objek request dari client
   // Melakukan query ke db
   // Mengirim response
-  const { body } = req;
-  const insertBody = { ...body, created_at: new Date(Date.now()), updated_at: new Date(Date.now()) }
+  const {
+    body
+  } = req;
+  const insertBody = {
+    ...body,
+    created_at: new Date(Date.now()),
+    updated_at: new Date(Date.now())
+  }
   const postNewProduct = new Promise((resolve, reject) => {
     const queryString = "INSERT INTO items SET ?";
     dbSQL.query(queryString, insertBody, (err, data) => {
@@ -58,7 +73,10 @@ app.post("/products", (req, res) => {
 
   postNewProduct.then(data => {
     const resObject = {
-      data: { id: data.insertBody, ...insertBody },
+      data: {
+        id: data.insertBody,
+        ...insertBody
+      },
     }
     res.json(resObject);
   }).catch((err) => {
@@ -68,9 +86,12 @@ app.post("/products", (req, res) => {
 
 // req params dan query
 
-// req params
+// @desc    Show single product
+// @route   GET /product/:id
 app.get("/product/:id", (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
   const getProduct = new Promise((resolve, reject) => {
     const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id WHERE p.id = ?';
     dbSQL.query(queryString, id, (err, data) => {
@@ -98,7 +119,9 @@ app.get("/product/:id", (req, res) => {
 // req query
 // localhost:3000/search?{query}
 app.get("/search", (req, res) => {
-  const { q } = req.query;
+  const {
+    q
+  } = req.query;
   const keyword = `%${q}%`;
   const searchProduct = new Promise((resolve, reject) => {
     const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id WHERE p.product_name LIKE ?';
