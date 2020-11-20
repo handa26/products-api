@@ -1,5 +1,5 @@
 const express = require("express");
-const mySQL = require("mysql");
+const db = require("./src/configs/db");
 const logger = require("morgan");
 
 const app = express();
@@ -29,7 +29,7 @@ app.get("/products", (_, res) => {
 
   const getAllProducts = new Promise((resolve, reject) => {
     const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id';
-    dbSQL.query(queryString, (err, data) => {
+    db.query(queryString, (err, data) => {
       if (!err) {
         resolve(data);
       } else {
@@ -62,7 +62,7 @@ app.post("/products", (req, res) => {
   }
   const postNewProduct = new Promise((resolve, reject) => {
     const queryString = "INSERT INTO items SET ?";
-    dbSQL.query(queryString, insertBody, (err, data) => {
+    db.query(queryString, insertBody, (err, data) => {
       if (!err) {
         resolve(data);
       } else {
@@ -94,7 +94,7 @@ app.get("/product/:id", (req, res) => {
   } = req.params;
   const getProduct = new Promise((resolve, reject) => {
     const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id WHERE p.id = ?';
-    dbSQL.query(queryString, id, (err, data) => {
+    db.query(queryString, id, (err, data) => {
       if (!err) {
         resolve(data);
       } else {
@@ -125,7 +125,7 @@ app.get("/search", (req, res) => {
   const keyword = `%${q}%`;
   const searchProduct = new Promise((resolve, reject) => {
     const queryString = 'SELECT p.id, p.product_name, p.product_brand, p.product_description, p.product_price, c.category_name, p.product_color, p.size,p.product_rating, p.product_qty FROM items AS p JOIN categories AS c ON c.id = p.category_id WHERE p.product_name LIKE ?';
-    dbSQL.query(queryString, keyword, (err, data) => {
+    db.query(queryString, keyword, (err, data) => {
       if (!err) {
         resolve(data);
       } else {
@@ -141,19 +141,6 @@ app.get("/search", (req, res) => {
     .catch(err => {
       res.status(500).json(err);
     })
-});
-
-
-const dbSQL = mySQL.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "products"
-})
-
-dbSQL.connect((err) => {
-  if (err) throw err;
-  console.log("Database connected");
 });
 
 const port = 3000;
