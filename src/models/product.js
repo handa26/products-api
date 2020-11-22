@@ -13,5 +13,30 @@ module.exports = {
         }
       });
     })
+  },
+  updateProduct: (updateBody, idBody) => {
+    return new Promise((resolve, reject) => {
+      const queryString =
+        "UPDATE items SET ? WHERE ?";
+      db.query(queryString, [updateBody, idBody], (err, data) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(err);
+        }
+      });
+    })
+  },
+  deleteProduct: (id) => {
+    return new Promise((resolve, reject) => {
+      const queryString = "DELETE FROM items WHERE id = ?";
+      db.query(queryString, id, (err, data) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(err);
+        }
+      });
+    })
   }
 }
