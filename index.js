@@ -18,7 +18,7 @@ app.use("/", require("./src/routes/index"));
 app.use("/products", require("./src/routes/products"));
 app.use("/product", require("./src/routes/product"));
 app.use("/search", require("./src/routes/search"));
-app.use("/category", require("./src/routes/category"));
+// app.use("/category", require("./src/routes/category"));
 
 const PORT = 3000;
 

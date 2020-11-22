@@ -6,6 +6,6 @@ const searchController = require("../controllers/search");
 // req query
 // localhost:3000/search?{query}
 router.get("/",searchController.searchProduct);
-// router.get("/", searchController.searchByCategory);
+router.get("/category", searchController.searchByCategory);
 
 module.exports = router;
