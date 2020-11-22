@@ -7,7 +7,6 @@ const productsController = require("../controllers/products");
 // @route   GET /products
 router.get("/", productsController.products)
 
-
 // @desc    Process add items
 // @route   POST /products
 router.post("/", productsController.postNewProduct);
