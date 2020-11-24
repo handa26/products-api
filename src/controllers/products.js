@@ -5,22 +5,14 @@ module.exports = {
   products: (_, res) => {
     productsModel
       .products()
-      .then(data => {
-        res.json(data);
-      })
-      .catch(err => {
-        res.status(500).json(err);
-      })
+      .then((data) => form.success(res, data))
+      .catch((err) => form.error(res, err));
   },
   newProducts: (_, res) => {
     productsModel
       .newProducts()
-      .then(data => {
-        form.success(res, data);
-      })
-      .catch(err => {
-        form.error(res, err);
-      })
+      .then(data => form.success(res, data))
+      .catch(err => form.error(res, err))
   },
   popularProducts: (_, res) => {
     productsModel
@@ -46,8 +38,6 @@ module.exports = {
         }
         res.json(resObj);
       })
-      .catch(err => {
-        res.status(500).json(err);
-      })
+      .catch(err => form.error(res, err));
   }
 }

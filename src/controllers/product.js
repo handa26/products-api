@@ -1,4 +1,5 @@
 const productModel = require("../models/product");
+const form = require("../helpers/form");
 
 module.exports = {
   product: (req, res) => {
@@ -32,9 +33,7 @@ module.exports = {
         };
         res.json(updateProducts);
       })
-      .catch((err) => {
-        res.status(500).json(err);
-      });
+      .catch((err) => form.error(res, err));
   },
   deleteProduct: (req, res) => {
     const { id } = req.params;
@@ -47,8 +46,6 @@ module.exports = {
         }
         res.json(deleteProduct);
       })
-      .catch(err => {
-        res.json(err)
-      })
+      .catch(err => form.error(res, err));
   }
 };
