@@ -15,8 +15,4 @@ router.get("/popular", productsController.popularProducts);
 // @route   GET /new
 router.get("/new", productsController.newProducts);
 
-// @desc    Process add items
-// @route   POST /products
-router.post("/", productsController.postNewProduct);
-
 module.exports = router;

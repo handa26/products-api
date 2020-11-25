@@ -19,6 +19,26 @@ module.exports = {
         res.json(err.msg);
       });
   },
+  postNewProduct: (req, res) => {
+    const { body } = req;
+    const insertBody = {
+      ...body,
+      created_at: new Date(Date.now()),
+      updated_at: new Date(Date.now()),
+    };
+    productModel
+      .postNewProduct(insertBody)
+      .then(data => {
+        const resObj = {
+          data: {
+            id: data.insertBody,
+            ...insertBody,
+          },
+        };
+        res.json(resObj);
+      })
+      .catch(err => form.error(res, err));
+  },
   updateProduct: (req, res) => {
     const { id } = req.params;
     const { body } = req;

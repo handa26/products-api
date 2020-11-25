@@ -39,17 +39,5 @@ module.exports = {
         }
       });
     })
-  },
-  postNewProduct: (insertBody) => {
-    return new Promise((resolve, reject) => {
-      const queryString = "INSERT INTO items SET ?";
-      db.query(queryString, insertBody, (err, data) => {
-        if (!err) {
-          resolve(data);
-        } else {
-          reject(err);
-        }
-      });
-    })
   }
 }
