@@ -1,7 +1,10 @@
 const express = require("express");
 const logger = require("morgan");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
 
 // Menambahkan logger
 app.use(logger("dev"));
