@@ -7,8 +7,12 @@ module.exports = {
     productModel
       .product(id)
       .then((data) => {
+        // form.success(res, data);
         if (data.length) {
-          res.json(data);
+          res.json(data[0]);
+          // form.success(res, data[0]);
+          // form.success(res, data);
+          // res.json(data);
         } else {
           res.status(404).json({
             msg: "Data not found",
