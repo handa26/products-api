@@ -2,9 +2,18 @@ const productsModel = require("../models/products");
 const form = require("../helpers/form");
 
 module.exports = {
-  products: (_, res) => {
+  products: (req, res) => {
+    const {sort} = req.query;
+    let keyword = ["%" + sort + "%"];
+    if (req.query.sort == 'desc') {
+      keyword = "DESC";
+    } else if (req.query.sort == "asc") {
+      keyword = "ASC";
+    } else {
+      keyword = "ASC";
+    }
     productsModel
-      .products()
+      .products(keyword)
       .then((data) => form.success(res, data))
       .catch((err) => form.error(res, err));
   },
