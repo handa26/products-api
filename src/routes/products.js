@@ -4,15 +4,11 @@ const router = express.Router();
 const productsController = require("../controllers/products");
 
 // @desc    Show all products
-// @route   GET /products
+// @route   GET /products?page={value}&limit={value}
 router.get("/", productsController.products);
 
 // @desc    Show all popular products
-// @route   GET /popular
+// @route   GET /popular?page={value}&limit={value}
 router.get("/popular", productsController.popularProducts);
-
-// @desc    Show all popular products
-// @route   GET /new
-router.get("/new", productsController.newProducts);
 
 module.exports = router;
