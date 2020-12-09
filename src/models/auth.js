@@ -39,10 +39,10 @@ module.exports = {
   },
   postLogin: (body) => {
     return new Promise((resolve, reject) => {
-      const { username, password } = body;
-      const qs = "SELECT password, user_type FROM users WHERE username = ?";
+      const { email, password } = body;
+      const qs = "SELECT id, email, password, user_type FROM users WHERE email = ?";
 
-      db.query(qs, username, (err, data) => {
+      db.query(qs, email, (err, data) => {
         // * Handle error SQL
         if (err) {
           reject({
@@ -52,7 +52,7 @@ module.exports = {
           });
         }
 
-        // * Handle user not found
+        // * Handle email not found
         if (!data[0]) {
           reject({
             msg: "Hash Error",
@@ -60,6 +60,7 @@ module.exports = {
             err,
           });
         } else {
+          // Comparing password
           bcrypt.compare(password, data[0].password, (err, result) => {
             if (err) {
               reject({
@@ -75,7 +76,8 @@ module.exports = {
               });
             } else {
               const payload = {
-                username,
+                id: data[0].id,
+                email,
                 type: data[0].user_type,
               };
               const secret = process.env.SECRET_KEY;
