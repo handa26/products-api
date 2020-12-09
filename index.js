@@ -1,11 +1,15 @@
 require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const app = express();
+app.use(express.static("public"));
 
 app.use(cors());
+
+app.use(cookieParser());
 
 // Menambahkan logger
 app.use(logger("dev"));
