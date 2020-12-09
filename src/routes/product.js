@@ -2,22 +2,24 @@ const express = require("express");
 
 const router = express.Router();
 const productController = require("../controllers/product");
+const { requireAuth } = require("../middlewares/authMiddleware");
+const { multipleUpload } = require("../middlewares/upload");
 
 
 // @desc    Show single product
 // @route   GET /product/:id
-router.get("/:id", productController.product);
+router.get("/:id", requireAuth, productController.product);
 
 // @desc    Post a product
 // @route   POST /product/:id
-router.post("/", productController.postNewProduct);
+router.post("/", requireAuth, multipleUpload, productController.postNewProduct);
 
 // @desc    Update a product
 // @route   PATCH /product/:id
-router.patch("/:id", productController.updateProduct);
+router.patch("/:id", requireAuth, productController.updateProduct);
 
 // @desc    Update a product
 // @route   DELETE /product/:id
-router.delete("/:id", productController.deleteProduct);
+router.delete("/:id", requireAuth, productController.deleteProduct);
 
 module.exports = router;

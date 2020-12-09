@@ -27,11 +27,17 @@ module.exports = {
     const { body } = req;
     const insertBody = {
       ...body,
+      image: req.filePath,
       created_at: new Date(Date.now()),
       updated_at: new Date(Date.now()),
     };
+    const res_img = req.filePath.split(",");
+    const insertNewBody = {
+      ...insertBody,
+      image: res_img
+    }
     productModel
-      .postNewProduct(insertBody)
+      .postNewProduct(insertNewBody)
       .then(data => {
         const resObj = {
           data: {
