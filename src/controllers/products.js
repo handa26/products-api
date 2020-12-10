@@ -14,6 +14,13 @@ module.exports = {
     productsModel
       .products(limit, offset)
       .then((data) => {
+        if (data.length === 0) {
+          const emptyResult = {
+            status: 404,
+            products: "Page not found",
+          }
+          res.json(emptyResult);
+        }
         const newResult = {
           products: data,
           pageInfo: {
