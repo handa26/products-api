@@ -40,6 +40,7 @@ module.exports = {
       .postNewProduct(insertNewBody)
       .then(data => {
         const resObj = {
+          status: 200,
           data: {
             id: data.insertBody,
             ...insertBody,
