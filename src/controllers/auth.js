@@ -8,7 +8,7 @@ const maxAge = 3 * 24 * 60 * 60; // 3 days in seconds
 module.exports = {
   register: (req, res) => {
     return new Promise((resolve, reject) => {
-      const { email, password } = req.body;
+      const { email, password, user_type } = req.body;
       const saltRounds = 10;
       bcrypt.genSalt(saltRounds, (err, salt) => {
         if (err) {
@@ -23,6 +23,7 @@ module.exports = {
           const newBody = {
             email: email,
             password: hash,
+            user_type: user_type
           }
           const qs = "INSERT INTO users SET ?";
 
@@ -52,10 +53,13 @@ module.exports = {
       .then(data => form.success(res, data))
       .catch(err => form.error(res, err));
   },
-  logout: (req, res) => {
+  logout: (_, res) => {
     // Delete cookie & user need login again
     // to get cookie
     res.cookie("jwtCookies", "", {  maxAge: 1});
-    res.send("Successfully log out");
+    res.status(200).json({
+      status: 200,
+      msg: "Successfully logout",
+    });
   }
 }
