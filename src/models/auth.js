@@ -55,7 +55,7 @@ module.exports = {
         // * Handle email not found
         if (!data[0]) {
           reject({
-            msg: "Hash Error",
+            msg: "Email not registered yet",
             status: 500,
             err,
           });
