@@ -42,7 +42,7 @@ const multipleUpload = (req, res, next) => {
         err
       });
     } else {
-      let filePath = req.files.map((val) => "/images/" + val.filename);
+      let filePath = req.files.map((val) => "http://localhost:3000" + "/images/" + val.filename);
 
       req.filePath = filePath.join(",");
       next();
