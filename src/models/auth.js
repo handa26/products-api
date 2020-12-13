@@ -35,20 +35,21 @@ module.exports = {
           });
         });
       });
-    })
+    });
   },
   postLogin: (body) => {
     return new Promise((resolve, reject) => {
       const { email, password } = body;
-      const qs = "SELECT id, email, password, user_type FROM users WHERE email = ?";
+      const qs =
+        "SELECT id, email, password, user_type FROM users WHERE email = ?";
 
       db.query(qs, email, (err, data) => {
         // * Handle error SQL
         if (err) {
           reject({
-            msg: "Error SQL", 
+            msg: "Error SQL",
             status: 500,
-            err
+            err,
           });
         }
 
@@ -72,7 +73,7 @@ module.exports = {
             if (!result) {
               reject({
                 msg: "Wrong password",
-                status: 401
+                status: 401,
               });
             } else {
               const payload = {
@@ -84,10 +85,27 @@ module.exports = {
               const token = jwt.sign(payload, secret);
               resolve({ token });
             }
-          })
+          });
         }
-
-      })
-    })
-  }
-}
+      });
+    });
+  },
+  postLogout: (blacklistToken) => {
+    return new Promise((resolve, reject) => {
+      const qs = "INSERT INTO blacklist_tokens SET ?";
+      db.query(qs, blacklistToken, (err, data) => {
+        if (!err) {
+          resolve({
+            data,
+            msg: "Successfully Logout.",
+          });
+        } else {
+          reject({
+            err,
+            msg: "Logout failed",
+          });
+        }
+      });
+    });
+  },
+};

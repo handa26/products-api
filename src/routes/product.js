@@ -2,13 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 const productController = require("../controllers/product");
+const checkToken = require("../middlewares/checkToken");
 const { requireAuth } = require("../middlewares/authMiddleware");
 const { multipleUpload } = require("../middlewares/upload");
 
 
 // @desc    Show single product
 // @route   GET /product/:id
-router.get("/:id", requireAuth, productController.product);
+router.get("/:id", checkToken.isLogin, productController.product);
 
 // @desc    Post a product
 // @route   POST /product/:id
