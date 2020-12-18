@@ -7,7 +7,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       // * Generate a salt and hash on separate function calls
       /*
-      TODO: Generate a salt, a random string that makes the hash unpredictable. 
+      * Generate a salt, a random string that makes the hash unpredictable. 
       */
       const saltRounds = 10;
       bcrypt.genSalt(saltRounds, (err, salt) => {
@@ -94,17 +94,17 @@ module.exports = {
     return new Promise((resolve, reject) => {
       const qs = "INSERT INTO blacklist_tokens SET ?";
       db.query(qs, blacklistToken, (err, data) => {
-        if (!err) {
-          resolve({
-            data,
-            msg: "Successfully Logout.",
-          });
-        } else {
-          reject({
-            err,
-            msg: "Logout failed",
-          });
-        }
+       if (!err) {
+         resolve({
+           data,
+           msg: "Successfully Logout.",
+         });
+       } else {
+         reject({
+           err,
+           msg: "Logout failed",
+         });
+       }
       });
     });
   },
