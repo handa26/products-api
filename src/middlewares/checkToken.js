@@ -4,6 +4,35 @@ const db = require("../configs/db");
 const form = require("../helpers/form");
 
 module.exports = {
+  isRegistered: (req, res, next) => {
+    const { email } = req.body;
+    const checkAvailable = new Promise((resolve, reject) => {
+      const queryString = "SELECT email FROM users WHERE email = ?";
+      db.query(queryString, email, (err, data) => {
+        if (!err) {
+          if (!data[0]) {
+            resolve({
+              msg: `success`,
+            });
+          } else {
+            reject({
+              msg: `Email telah digunakan!`,
+            });
+          }
+        } else {
+          reject({
+            msg: `SQLquery ERROR!`,
+          });
+        }
+      });
+    })
+      .then((result) => {
+        next();
+      })
+      .catch((error) => {
+        form.error(res, error);
+      });
+  },
   isLogin: (req, res, next) => {
     const bearerToken = req.header("x-access-token");
     if (!bearerToken) {
@@ -32,26 +61,26 @@ module.exports = {
           }
         });
       })
-      .then((token) => {
-        try {
-          const decodeToken = jwt.verify(token, process.env.SECRET_KEY);
-          req.decodeToken = decodeToken;
+        .then((token) => {
+          try {
+            const decodeToken = jwt.verify(token, process.env.SECRET_KEY);
+            req.decodeToken = decodeToken;
 
-          next();
-        } catch (error) {
-          form.error(res, {
-            msg: "Invalid token",
-            error,
-            status: 401,
-          });
-        }
-      })
-      .catch((error) => {
-        form.error(res, {
-          error,
-          msg: "Invalid Token"
+            next();
+          } catch (error) {
+            form.error(res, {
+              msg: "Invalid token",
+              error,
+              status: 401,
+            });
+          }
         })
-      })
+        .catch((error) => {
+          form.error(res, {
+            error,
+            msg: "Invalid Token",
+          });
+        });
     }
   },
 };
