@@ -41,12 +41,12 @@ module.exports = {
 
       authModel
         .postLogout(blacklistToken)
-        .then(data => {
+        .then((data) => {
           res.status(200).json({
-            msg: "Successfully logout"
-          })
+            msg: "Successfully logout",
+          });
         })
-        .catch(err => form.error(res, err));
+        .catch((err) => form.error(res, err));
     }
   }
 }

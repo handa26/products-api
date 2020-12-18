@@ -1,3 +1,4 @@
+const fs = require("fs");
 const productModel = require("../models/product");
 const form = require("../helpers/form");
 
@@ -24,36 +25,39 @@ module.exports = {
       });
   },
   postNewProduct: (req, res) => {
+    const images = req.files.map((e) => process.env.DEVELOPMENT_BASEURL + "/images/" + e.filename)
+    const ImgStr = images.toString();
+
     const { body } = req;
     const insertBody = {
       ...body,
-      image: req.filePath,
       created_at: new Date(Date.now()),
       updated_at: new Date(Date.now()),
+      image: ImgStr
     };
-    const res_img = req.filePath.split(",");
-    const insertNewBody = {
-      ...insertBody,
-      image: res_img
-    }
     productModel
-      .postNewProduct(insertNewBody)
-      .then(data => {
-        const resObj = {
-          status: 200,
-          data: {
-            id: data.insertBody,
-            ...insertBody,
-          },
+      .postNewProduct(insertBody)
+      .then((data) => {
+        const resObject = {
+          msg: "Data berhasil dimasukan",
+          data: {id: data.insertId, ...insertBody}
         };
-        res.json(resObj);
+        res.status(200).json(resObject);
       })
-      .catch(err => form.error(res, err));
+      .catch(err => res.status(500).json(err));
   },
   updateProduct: (req, res) => {
     const { id } = req.params;
     const { body } = req;
-    const updateBody = { ...body, updated_at: new Date(Date.now()) };
+    const images = req.files.map(
+      (e) => process.env.DEVELOPMENT_BASEURL + "/images/" + e.filename
+    );
+    const ImgStr = images.toString();
+    const updateBody = { 
+      ...body, 
+      updated_at: new Date(Date.now()),
+      image: ImgStr,
+     };
     const idBody = { id };
     productModel
       .updateProduct(updateBody, idBody)
@@ -68,6 +72,7 @@ module.exports = {
   },
   deleteProduct: (req, res) => {
     const { id } = req.params;
+    console.log(req.pathFile);
     productModel
       .deleteProduct(id)
       .then(data => {
