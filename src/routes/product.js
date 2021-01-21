@@ -9,11 +9,11 @@ const { multipleUpload } = require("../middlewares/upload");
 
 // @desc    Show single product
 // @route   GET /product/:id
-router.get("/:id", checkToken.isLogin, productController.product);
+router.get("/:id", productController.product);
 
 // @desc    Post a product
 // @route   POST /product/:id
-router.post("/", requireAuth, multipleUpload, productController.postNewProduct);
+router.post("/", checkToken.isLogin, multipleUpload, productController.postNewProduct);
 
 // @desc    Update a product
 // @route   PATCH /product/:id
@@ -21,6 +21,6 @@ router.patch("/:id", requireAuth, productController.updateProduct);
 
 // @desc    Update a product
 // @route   DELETE /product/:id
-router.delete("/:id", requireAuth, productController.deleteProduct);
+router.delete("/:id", checkToken.isLogin, productController.deleteProduct);
 
 module.exports = router;

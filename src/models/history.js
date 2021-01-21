@@ -4,7 +4,7 @@ module.exports = {
   histories: () => {
     return new Promise((resolve, reject) => {
       const queryString =
-        "SELECT p.id, p.product_name, p.product_brand, p.product_price, c.category_name, p.product_color, p.size, p.product_qty, p.transaction_date FROM histories AS p JOIN categories AS c ON c.id = p.category_id";
+        "SELECT i.id, i.invoice_id AS 'Invoice Number', p.product_name AS 'Product Name', p.product_price AS 'Price', i.qty AS 'Quantity', (p.product_price * i.qty) AS 'Total' FROM invoice AS i, items AS p WHERE i.id = p.id";
       db.query(queryString, (err, data) => {
         if (!err) {
           resolve(data);
@@ -16,7 +16,7 @@ module.exports = {
   },
   postNewHistory: (insertBody) => {
     return new Promise((resolve, reject) => {
-      const queryString = "INSERT INTO histories SET ?";
+      const queryString = "INSERT INTO invoice SET ?";
       db.query(queryString, insertBody, (err, data) => {
         if (!err) {
           resolve(data);

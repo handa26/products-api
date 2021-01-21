@@ -41,7 +41,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       const { email, password } = body;
       const qs =
-        "SELECT id, email, password, user_type FROM users WHERE email = ?";
+        "SELECT users.id, users.name, users.email, users.password, types.type FROM users JOIN types ON types.id = users.user_type WHERE email = ?";
 
       db.query(qs, email, (err, data) => {
         // * Handle error SQL
@@ -77,13 +77,13 @@ module.exports = {
               });
             } else {
               const payload = {
-                id: data[0].id,
+                // id: data[0].id,
                 email,
-                type: data[0].user_type,
+                // type: data[0].type,
               };
               const secret = process.env.SECRET_KEY;
               const token = jwt.sign(payload, secret);
-              resolve({ token });
+              resolve({ token, id: data[0].id, type: data[0].type, email: data[0].email, name: data[0].name});
             }
           });
         }
@@ -109,3 +109,5 @@ module.exports = {
     });
   },
 };
+// Backup 
+// "SELECT id, email, password, user_type FROM users WHERE email = ?";
