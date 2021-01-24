@@ -5,7 +5,7 @@ const historyController = require("../controllers/history");
 
 // @desc    Show all products
 // @route   GET /histories
-router.get("/", historyController.histories);
+router.get("/:id", historyController.histories);
 
 // @desc    Process add history
 // @route   POST /histories

@@ -1,11 +1,13 @@
 const db = require("../configs/db");
 
 module.exports = {
-  histories: () => {
+  histories: (id) => {
     return new Promise((resolve, reject) => {
       const queryString =
-        "SELECT i.id, i.invoice_id AS 'Invoice Number', p.product_name AS 'Product Name', p.product_price AS 'Price', i.qty AS 'Quantity', (p.product_price * i.qty) AS 'Total' FROM invoice AS i, items AS p WHERE i.id = p.id";
-      db.query(queryString, (err, data) => {
+        "SELECT i.id, i.invoice_id, i.qty, i.price FROM invoice AS i WHERE user_id = ?";
+      // const queryString =
+      //   "SELECT i.user_id, i.invoice_id AS 'Invoice Number', p.product_name AS 'Product Name', p.product_price AS 'Price', i.qty AS 'Quantity', (p.product_price * i.qty) AS 'Total' FROM invoice AS i, items AS p WHERE i.user_id = ?";
+      db.query(queryString, id, (err, data) => {
         if (!err) {
           resolve(data);
         } else {

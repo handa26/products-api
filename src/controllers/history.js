@@ -16,9 +16,10 @@ const randomToken = () => {
 }
 
 module.exports = {
-  histories: (_, res) => {
+  histories: (req, res) => {
+    const { id } = req.params;
     historyModel
-      .histories()
+      .histories(id)
       .then(data => {
         form.success(res, data);
       })
