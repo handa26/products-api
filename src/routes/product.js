@@ -17,7 +17,7 @@ router.post("/", checkToken.isLogin, multipleUpload, productController.postNewPr
 
 // @desc    Update a product
 // @route   PATCH /product/:id
-router.patch("/:id", requireAuth, productController.updateProduct);
+router.patch("/:id", checkToken.isLogin, multipleUpload, productController.updateProduct);
 
 // @desc    Update a product
 // @route   DELETE /product/:id

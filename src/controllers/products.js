@@ -18,7 +18,7 @@ module.exports = {
           const emptyResult = {
             status: 404,
             products: "Page not found",
-          }
+          };
           res.json(emptyResult);
         }
         const newResult = {
@@ -34,6 +34,7 @@ module.exports = {
       })
       .catch((err) => form.error(res, err));
   },
+
   popularProducts: (req, res) => {
     const { query } = req;
     const limit = Number(query.limit) || 4;
@@ -52,6 +53,18 @@ module.exports = {
           },
         };
         res.json(newResult);
+      })
+      .catch((err) => form.error(res, err));
+  },
+
+  productsById: (req, res) => {
+    const { id } = req.params;
+    productsModel
+      .productsById(id)
+      .then((data) => {
+        res.json({
+          data,
+        });
       })
       .catch((err) => form.error(res, err));
   },
