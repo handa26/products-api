@@ -22,8 +22,8 @@ app.use(logger("dev"));
 const io = require("socket.io")(server).sockets;
 
 io.on("connection", (socket) => {
-  socket.on("message", (message) => {
-    io.emit("message", message);
+  socket.on("message", (message, user) => {
+    io.emit("message", message, user);
   });
 });
 
