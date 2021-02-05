@@ -21,19 +21,6 @@ app.use(logger("dev"));
 
 const io = require("socket.io")(server).sockets;
 
-// io.on("connection", (socket) => {
-//   const id = socket.handshake.query.id;
-//   console.log(' isi handshake',socket.handshake.query);
-
-//   socket.join(id);
-
-//   socket.on("message", (message, id_receiver) => {
-//     console.log(message.sender);
-//     console.log("id reciever", id_receiver);
-//     io.to(id_receiver).to(id).emit("message", message);
-//   })
-// })
-
 io.on("connection", (socket) => {
   socket.on("message", (message, user) => {
     io.emit("message", message, user);
