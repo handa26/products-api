@@ -7,16 +7,16 @@ const multerStorage = multer.diskStorage({
     cb(null, "./public/images");
   },
   filename: function (req, file, cb) {
-    const nameFormat = `${Date.now()}-${file.fieldname}${path.extname(
+    const nameFormat = `image-${Date.now()}-${file.fieldname}${path.extname(
       file.originalname
     )}`;
-    cb(null,nameFormat);
+    cb(null, nameFormat);
   },
 });
 
 const upload = multer({
   storage: multerStorage,
-  limits: 6 * 1000 * 1000, // 2 MB
+  limits: 10 * 1000 * 1000, // 2 MB
 });
 
 const singleUpload = (req, res, next) => {
@@ -25,18 +25,16 @@ const singleUpload = (req, res, next) => {
     if (err) {
       form.error(res, {
         msg: "Multer error",
-        err
+        err,
       });
     } else {
-      let filePath = req.files.map(
-        (val) => "http://localhost:3000" + "/images/" + val.filename
-      );
+      let filePath = req.files.map((val) => "/images/" + val.filename);
 
       req.filePath = filePath.join(",");
       next();
     }
-  })
-}
+  });
+};
 
 const multipleUpload = (req, res, next) => {
   const multiple = upload.array("image", 5);
@@ -44,18 +42,19 @@ const multipleUpload = (req, res, next) => {
     if (err) {
       form.error(res, {
         msg: "Multer error",
-        err
+        err,
       });
     } else {
-      let filePath = req.files.map((val) => "http://localhost:3000" + "/images/" + val.filename);
+      // let filePath = req.files.map((val) => "http://localhost:3000" + "/images/" + val.filename);
+      let filePath = req.files.map((val) => "/images/" + val.filename);
 
       req.filePath = filePath.join(",");
       next();
     }
-  })
-}
+  });
+};
 
 module.exports = {
   multipleUpload,
-  singleUpload
+  singleUpload,
 };

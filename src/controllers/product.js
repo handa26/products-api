@@ -25,22 +25,23 @@ module.exports = {
       });
   },
   postNewProduct: (req, res) => {
-    const images = req.files.map((e) => process.env.DEVELOPMENT_BASEURL + "/images/" + e.filename)
-    const ImgStr = images.toString();
+    // const images = req.files.map((e) => process.env.DEVELOPMENT_BASEURL + "/images/" + e.filename)
+    // const ImgStr = images.toString();
 
     const { body } = req;
     const insertBody = {
       ...body,
       created_at: new Date(Date.now()),
       updated_at: new Date(Date.now()),
-      image: ImgStr
+      image: req.filePath,
     };
+    const image = req.filePath.split(",");
     productModel
       .postNewProduct(insertBody)
       .then((data) => {
         const resObject = {
           msg: "Data berhasil dimasukan",
-          data: {id: data.insertId, ...insertBody}
+          data: {id: data.insertId, ...insertBody, image: image}
         };
         res.status(200).json(resObject);
       })
@@ -48,23 +49,26 @@ module.exports = {
   },
   updateProduct: (req, res) => {
     const { id } = req.params;
-    const { body } = req;
-    const images = req.files.map(
-      (e) => process.env.DEVELOPMENT_BASEURL + "/images/" + e.filename
-    );
-    const ImgStr = images.toString();
-    const updateBody = { 
-      ...body, 
-      updated_at: new Date(Date.now()),
-      image: ImgStr,
-     };
+    let { body } = req;
+    // const images = req.files.map(
+    //   (e) => process.env.DEVELOPMENT_BASEURL + "/images/" + e.filename
+    // );
+    // const ImgStr = images.toString();
+    if (req.filePath !== "") {
+      body = {
+        ...body,
+        updated_at: new Date(Date.now()),
+        image: req.filePath,
+      };
+    }
     const idBody = { id };
     productModel
-      .updateProduct(updateBody, idBody)
+      .updateProduct(body, idBody)
       .then((data) => {
         const updateProducts = {
-          msg: "Data berhasil diupdate",
-          data: { id: data.updateId, updateBody },
+          msg: "Data successfully updated",
+          ...data,
+          // data: { id: data.updateId, updateBody },
         };
         res.json(updateProducts);
       })
