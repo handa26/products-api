@@ -44,9 +44,9 @@ app.use("/history", require("./src/routes/history"));
 app.use("/auth", require("./src/routes/auth"));
 app.use("/address", require("./src/routes/addresses"));
 
-const PORT = 3000;
+const PORT = 8000;
 
 // set port, listen for requests
 server.listen(PORT, () => {
-  console.log("Server running at port 3000");
+  console.log(`Server running at port ${PORT}`);
 });
