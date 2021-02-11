@@ -37,6 +37,7 @@ app.use(express.json());
 
 // Router
 app.use("/", require("./src/routes/index"));
+app.use("/user", require("./src/routes/user"));
 app.use("/products", require("./src/routes/products"));
 app.use("/product", require("./src/routes/product"));
 app.use("/search", require("./src/routes/search"));

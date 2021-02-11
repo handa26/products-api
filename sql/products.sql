@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2021 at 05:56 AM
+-- Generation Time: Feb 11, 2021 at 02:39 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -49,7 +49,8 @@ INSERT INTO `addresses` (`id`, `name`, `city`, `street`, `province`, `postal_cod
 (5, 'Annais', 'Balikpapan', 'Jl. Soekarno no. 20', 'East Kalimantan', 45809, 'Indonesia', 23),
 (6, 'Bagas birmantara', 'Banjarbaru', 'Jl. Cendana no. 10', 'South borneo', 70714, 'Indonesia', 31),
 (7, 'Logan Lee', 'Amarillo', 'Baker St. No. 229B', 'Texas', 288111, 'United States', 23),
-(8, 'Billy Joel', 'Banjarmasin', 'Zenith St. No. 20', 'South Borneo', 90214, 'Indonesia', 23);
+(8, 'Billy Joel', 'Banjarmasin', 'Zenith St. No. 20', 'South Borneo', 90214, 'Indonesia', 23),
+(9, 'Billy Joel', 'Banjarmasin', 'Zenith St. No. 20', 'South Borneo', 90214, 'Indonesia', 43);
 
 -- --------------------------------------------------------
 
@@ -183,7 +184,14 @@ INSERT INTO `blacklist_tokens` (`id`, `token`) VALUES
 (125, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTI4NTM0NjZ9.qk0R1xetWuEU4b2h1uMfkyPYPeKTa87qhvh9x9idIqE'),
 (126, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vdG5vZWxAZ21haWwuY29tIiwiaWF0IjoxNjEyODU0MTU4fQ.sRMhwNrpG7tBN4S3Slc4Bw4OVXMFopDrBgJ8trYmZE8'),
 (127, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTI4NTQxOTJ9.VbTGJKk6Q-x-WzLH4-OhkvxwnBTeN6hsJ4T0NWElqU0'),
-(128, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTI4NjQxOTd9.9D9gY3lEyrx2P5m6ALaWLSEUkzUYR35nxOK6P2X3VAs');
+(128, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTI4NjQxOTd9.9D9gY3lEyrx2P5m6ALaWLSEUkzUYR35nxOK6P2X3VAs'),
+(129, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTYwOTc2fQ._uPdktVy1NeSNjiZtXhzOEQcaNMiHCIwqNQ3c-NZCZE'),
+(130, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTY3MzQ0fQ.msQF3zzoRimaO7XvHuwtUAFjn03VfHs-WnQx-P4egpM'),
+(131, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTY4NDQyfQ.BwlrmmNEFdteGkCJwUtbsQmcL8lSK3loieqyUE_QPUI'),
+(132, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTk4MjQxfQ.6OF9bQoaOEV_v0s4ZRqWXlaLrVmwDZblEDuPFYpt29M'),
+(133, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTk4MzYwfQ.4PcU0q4GXBvK6W2yMleknCpwUGSZYhe8mhkSEmOMe5k'),
+(134, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjEzMDAyMzYxfQ.1Sxi7jptIWsuZoV5PYhyslDPvDHtdkgSazj8SogFfNU'),
+(135, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEzMDAzNjc1fQ.pBqIapc8acSzpH4WL7VQWfWD9wMT1cN7dtlsN24UQJg');
 
 -- --------------------------------------------------------
 
@@ -293,7 +301,9 @@ INSERT INTO `invoice` (`id`, `invoice_id`, `user_id`, `qty`, `price`, `payment`)
 (17, 'INV/2021/23/jrG6yE', 23, 2, 150000, 'google'),
 (18, 'INV/2021/31/iq5Rgt', 31, 3, 225000, 'mastercard'),
 (19, 'INV/2021/23/1KzDY7', 23, 3, 140800, 'Apple pay'),
-(20, 'INV/2021/23/GhhjtD', 23, 1, 32900, 'Mastercard');
+(20, 'INV/2021/23/GhhjtD', 23, 1, 32900, 'Mastercard'),
+(21, 'INV/2021/21/uXjufK', 21, 3, 1512000, 'Apple pay'),
+(22, 'INV/2021/43/Gr283Z', 43, 2, 150000, 'Mastercard');
 
 -- --------------------------------------------------------
 
@@ -338,6 +348,18 @@ INSERT INTO `items` (`id`, `product_name`, `image`, `product_brand`, `product_de
 (80, 'Celana Jeans Panjang Pensil Pria', '/images/1608136734610-image.jpg,/images/1608136734621-image.jpg,/images/1608136734625-image.jpg,/images/1608136734628-image.jpg,/images/1608136734631-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 32900, 2, 0, 4, 'black', 0, 10, 21, '2020-12-17 00:38:54.668000', '2020-12-17 00:38:54.668000'),
 (81, 'T-shirt Astronaut', '/images/1608145511573-image.jpg,/images/1608145511581-image.jpg,/images/1608145511607-image.jpg,/images/1608145511629-image.jpg,/images/1608145511647-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 1, 0, 4, 'black', 0, 10, 21, '2020-12-17 03:05:11.672000', '2020-12-17 03:05:11.672000'),
 (82, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608171992923-image.jpg,/images/1608171992981-image.jpg,/images/1608171993012-image.jpg,/images/1608171993093-image.jpg,/images/1608171993104-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 1, 0, 4, 'Red', 0, 10, 21, '2020-12-17 10:26:33.122000', '2020-12-17 10:26:33.122000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `otp`
+--
+
+CREATE TABLE `otp` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `otp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -397,7 +419,10 @@ INSERT INTO `users` (`id`, `name`, `email`, `telephone`, `store_name`, `password
 (31, 'Bagas', 'bagas@gmail.com', '083145693625', '', '$2b$10$RTGHJPKTy3dZCcfFp.WrgehwPCusnAMIynllxE5aWm0unQluwq4S2', 1),
 (32, 'Test Person', 'test@gmail.com', '0831-1111-2121', 'Test Store', '$2b$10$xLb5yuaeGpkABvqp0jLHFeS0dFpxYuCIXbnZdN1Ry7VvH8e8HYI7y', 2),
 (33, 'Jonnie', 'jonnie@yahoo.com', '0831-3030-0998', 'John Store', '$2b$10$rH8X3rtsgDqOeW4Q3j0UmeUvFOax6yzR2Mld12oiOf8YxS1RBdhdK', 2),
-(34, 'Moore', 'moore@gmail.com', '', '', '$2b$10$DhFvPsAMA/pNhV7bgCPzveYfwLw9nmeQsAOw.MLkDg.VCiw4kwwD2', 1);
+(34, 'Moore', 'moore@gmail.com', '', '', '$2b$10$DhFvPsAMA/pNhV7bgCPzveYfwLw9nmeQsAOw.MLkDg.VCiw4kwwD2', 1),
+(35, 'Lennin Vladimir', 'xofexe6591@hrandod.com', '083130303030', 'Lennin Store', '$2b$10$rmUeXJypgokN2Dfnqr.kauGl4.ukYkRcqwl9KvKQFJgUU037dZacC', 2),
+(36, 'Nanda', 'anandamuhammad89@gmail.com', '083141591960', 'Nanda Store', '$2b$10$kGKhqT7w8n7kf1S45ryZM.6WcR6fGzOgyrPCQK2RapavOTXZOruF2', 2),
+(43, 'John Doe', 'johndoe@gmail.com', '', '', '$2b$10$7hUxOMSvsZhIqgdOW/GgvuuAuTKWgOn5XRv8YZA78EyLIuBYywsBu', 1);
 
 --
 -- Indexes for dumped tables
@@ -446,6 +471,12 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `otp`
+--
+ALTER TABLE `otp`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `types`
 --
 ALTER TABLE `types`
@@ -465,13 +496,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `blacklist_tokens`
 --
 ALTER TABLE `blacklist_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -495,13 +526,19 @@ ALTER TABLE `histories`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT for table `otp`
+--
+ALTER TABLE `otp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `types`
@@ -513,7 +550,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
