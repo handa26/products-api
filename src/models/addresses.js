@@ -24,5 +24,29 @@ module.exports = {
         }
       });
     });
+  },
+  updateAddress: (updateBody, idBody) => {
+    return new Promise((resolve, reject) => {
+      const queryString = "UPDATE addresses SET ? WHERE ?";
+      db.query(queryString, [updateBody, idBody], (err, data) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(err);
+        }
+      });
+    });
+  },
+  deleteAddress: (id) => {
+    return new Promise((resolve, reject) => {
+      const queryString = "DELETE FROM addresses WHERE id = ?";
+      db.query(queryString, id, (err, data) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(err);
+        }
+      });
+    });
   }
 }

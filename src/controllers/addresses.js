@@ -31,5 +31,32 @@ module.exports = {
       .catch((err) => {
         form.error(res, err);
       });
+  },
+  updateAddress: (req, res) => {
+    const { id } = req.params;
+    let { body } = req;
+    addressModel
+      .updateAddress(body, id)
+      .then((data) => {
+        const updateAddress = {
+          msg: "Update address successfully.",
+          ...data
+        };
+        res.status(200).json(updateAddress);
+      })
+      .catch((err) => form.error(res, err));
+  },
+  deleteAddress: (req, res) => {
+    const { id } = req.params;
+    addressModel
+      .deleteAddress(id)
+      .then((data) => {
+        const deleteAddress = {
+          msg: "Successfully deleted address",
+          ...data
+        };
+        res.status(200).json(deleteAddress);
+      })
+      .catch((err) => form.error(res, err));
   }
 }
