@@ -79,13 +79,12 @@ module.exports = {
               });
             } else {
               const payload = {
-                // id: data[0].id,
+                user_id: data[0].id,
                 email,
-                // type: data[0].type,
               };
               const secret = process.env.SECRET_KEY;
               const token = jwt.sign(payload, secret);
-              resolve({ token, id: data[0].id, type: data[0].type, email: data[0].email, name: data[0].name});
+              resolve({ token, id: data[0].id, user_id: data[0].id, type: data[0].type, email: data[0].email, name: data[0].name});
             }
           });
         }
