@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2021 at 02:39 AM
+-- Generation Time: Mar 04, 2021 at 09:18 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -191,7 +191,21 @@ INSERT INTO `blacklist_tokens` (`id`, `token`) VALUES
 (132, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTk4MjQxfQ.6OF9bQoaOEV_v0s4ZRqWXlaLrVmwDZblEDuPFYpt29M'),
 (133, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEyOTk4MzYwfQ.4PcU0q4GXBvK6W2yMleknCpwUGSZYhe8mhkSEmOMe5k'),
 (134, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNjEzMDAyMzYxfQ.1Sxi7jptIWsuZoV5PYhyslDPvDHtdkgSazj8SogFfNU'),
-(135, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEzMDAzNjc1fQ.pBqIapc8acSzpH4WL7VQWfWD9wMT1cN7dtlsN24UQJg');
+(135, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW11aGFtbWFkODlAZ21haWwuY29tIiwiaWF0IjoxNjEzMDAzNjc1fQ.pBqIapc8acSzpH4WL7VQWfWD9wMT1cN7dtlsN24UQJg'),
+(136, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vdG5vZWxAZ21haWwuY29tIiwiaWF0IjoxNjEzMDI1MjgxfQ.PfT-UA2XJK7M_1wmwWdEWQgvTHZyjq66QghKBQHVSPQ'),
+(137, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTMzNTczNjJ9.mNp_I0qBvs1Tatm0XF2oNXnQTxnwQMbiK6Zmqh6cn4A'),
+(138, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vdG5vZWxAZ21haWwuY29tIiwiaWF0IjoxNjEzMzU3Mzg3fQ.8i60WYgDUXLkMzk7jkqMe1Lv7omJVhy7md2aC5dq0pw'),
+(139, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTMzNTg5MDR9.ecjMUDcAAnNmNjJDk3Own7mFf2bbaQewRrdu6CZkdpU'),
+(140, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTM3NDI5MzB9.cMsJnCZPAhMv1_Oks8Qk6fP4BsL-h30M4UFnrhHhT84'),
+(141, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYW5kYW10cUBnbWFpbC5jb20iLCJpYXQiOjE2MTM3NDI5MzB9.cMsJnCZPAhMv1_Oks8Qk6fP4BsL-h30M4UFnrhHhT84'),
+(142, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMywiZW1haWwiOiJhbmFuZGFtdHFAZ21haWwuY29tIiwiaWF0IjoxNjE0MTM2Mjc0fQ.PYXmfyz7y4FR8wY3gmBuVwQckF42xgLlBGddeHMPQMQ'),
+(143, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZW1haWwiOiJub3Rub2VsQGdtYWlsLmNvbSIsImlhdCI6MTYxNDE1MjMxNn0.kmCUC7-6S7mKxhyxe6PYZTs6ll-TTYmpzmjl9OK8CdE'),
+(144, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMywiZW1haWwiOiJhbmFuZGFtdHFAZ21haWwuY29tIiwiaWF0IjoxNjE0MTY0OTA4fQ.QN8TZGfRt3bt7NNrvkOAxeTdq0lKH2zDBb1BdlrX5-I'),
+(145, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZW1haWwiOiJub3Rub2VsQGdtYWlsLmNvbSIsImlhdCI6MTYxNDI0NTA4Nn0.nMB68nkKYUkJ67zECbboh8BopRhG_mCJCcC4o67OHgA'),
+(146, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMywiZW1haWwiOiJhbmFuZGFtdHFAZ21haWwuY29tIiwiaWF0IjoxNjE0MjQ4MDQxfQ.Tqf17DGwQz_0IOopt_OBskOQrU1QvNB94hTajQtWMg0'),
+(147, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZW1haWwiOiJub3Rub2VsQGdtYWlsLmNvbSIsImlhdCI6MTYxNDMxMTc2M30.N4V_8G16pCDZgUo-jg6VzCR3LmGD00VVbeg94qeM8kE'),
+(148, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMywiZW1haWwiOiJhbmFuZGFtdHFAZ21haWwuY29tIiwiaWF0IjoxNjE0MzUwNTA0fQ.zKNHAXTvzFSP5g7eImMeYOhKdx3WS6dAV3-0di-Neg4'),
+(149, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZW1haWwiOiJub3Rub2VsQGdtYWlsLmNvbSIsImlhdCI6MTYxNDM1MDU5OX0.rk2kQjdBb22tkfPvRIACPqDcHzQ2qaBukvhX239489c');
 
 -- --------------------------------------------------------
 
@@ -212,6 +226,32 @@ INSERT INTO `categories` (`id`, `category_name`) VALUES
 (1, 'Baju'),
 (2, 'Celana'),
 (3, 'Sepatu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chats`
+--
+
+CREATE TABLE `chats` (
+  `id` int(11) NOT NULL,
+  `seller` int(11) NOT NULL,
+  `buyer` int(11) NOT NULL,
+  `chat_room` varchar(15) NOT NULL,
+  `sender` int(11) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chats`
+--
+
+INSERT INTO `chats` (`id`, `seller`, `buyer`, `chat_room`, `sender`, `message`, `created_at`) VALUES
+(20, 21, 23, 'S21B23', 23, 'Kak, untuk produk ini stocknya masih ada?', '2021-02-26 22:42:46'),
+(21, 21, 23, 'S21B23', 21, 'Iya kak masih ada', '2021-02-26 22:43:55'),
+(22, 21, 23, 'S21B23', 23, 'Okok kak :)', '2021-02-26 22:46:04'),
+(23, 21, 23, 'S21B23', 23, 'Nanti saya tanya\" lagi ya', '2021-02-26 22:50:34');
 
 -- --------------------------------------------------------
 
@@ -303,7 +343,8 @@ INSERT INTO `invoice` (`id`, `invoice_id`, `user_id`, `qty`, `price`, `payment`)
 (19, 'INV/2021/23/1KzDY7', 23, 3, 140800, 'Apple pay'),
 (20, 'INV/2021/23/GhhjtD', 23, 1, 32900, 'Mastercard'),
 (21, 'INV/2021/21/uXjufK', 21, 3, 1512000, 'Apple pay'),
-(22, 'INV/2021/43/Gr283Z', 43, 2, 150000, 'Mastercard');
+(22, 'INV/2021/43/Gr283Z', 43, 2, 150000, 'Mastercard'),
+(23, 'INV/2021/23/3g3C0T', 23, 2, 150000, 'stripe');
 
 -- --------------------------------------------------------
 
@@ -319,7 +360,6 @@ CREATE TABLE `items` (
   `product_description` longtext NOT NULL,
   `product_price` int(255) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `color_id` int(11) NOT NULL,
   `product_rating` int(11) NOT NULL,
   `product_color` varchar(20) NOT NULL,
   `size` int(255) NOT NULL,
@@ -333,21 +373,21 @@ CREATE TABLE `items` (
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`id`, `product_name`, `image`, `product_brand`, `product_description`, `product_price`, `category_id`, `color_id`, `product_rating`, `product_color`, `size`, `product_qty`, `user_id`, `created_at`, `updated_at`) VALUES
-(69, 'kaos baju polos 30s cotton bamboo', '/images/1608017062803-image.jpg,/images/1608017062808-image.jpg,/images/1608017062820-image.jpg,/images/1608017062822-image.jpg,/images/1608017062827-', 'PolosBambu', 'Sekarang udah ga usah pusing mikirin kaos keren dengan gambar dan tulisan apaa, cukup pakai kaos polos udah keren dan kekinian. Apalagi pakai kaos polos bahan katun bambu,selain sudah keren kaosnya beda sama yang lainnya karena bahan katun bambu mempunyai antibakterial alami dan nyaman dipakai.', 50000, 1, 1, 4, 'White', 20, 10, NULL, '2020-12-15 15:24:22.888000', '2020-12-15 15:24:22.888000'),
-(70, 'Baju tidur wanita/piyama wanita/baju tidur murah', '/images/1608017575800-image.jpg,/images/1608017575814-image.jpg,/images/1608017575818-image.jpg,/images/1608017575828-image.jpg,/images/1608017575837-', 'Distro Polosan', 'Ada harga ada kualitas.\nBeda bahan beda harga, jangan samakan dengan yang biasa', 50000, 1, 0, 3, 'Pink', 20, 10, NULL, '2020-12-15 15:32:55.890000', '2020-12-15 15:32:55.890000'),
-(71, 'Celana Panjang Chino Pria Premium Quality / Celana Kerja Pria ', '/images/1608017954292-image.jpg,/images/1608017954379-image.jpg,/images/1608017954383-image.jpg,/images/1608017954386-image.jpg,/images/1608017954389-', 'Simpleclothes.id', 'JAMINAN HARGA TERMURAH , DAN BAHAN \"PREMIUM QUALITY\"', 75000, 2, 0, 4, 'Black', 27, 10, NULL, '2020-12-15 15:39:14.410000', '2020-12-15 15:39:14.410000'),
-(72, 'Techdoo Impor Sepatu Sneakers Ringan', '/images/1608044257404-image.jpg,/images/1608044257413-image.jpg,/images/1608044257421-image.jpg,/images/1608044257424-image.jpg,/images/1608044257434-', 'Techdoo', 'Dear Pembeli, mohon mencantumkan warna dan ukuran yang diinginkan di kolom catatan pembeli, jika tidak kita akan kirimkan warna acak.\n', 180000, 3, 0, 5, 'White', 27, 10, NULL, '2020-12-15 22:57:37.475000', '2020-12-15 22:57:37.475000'),
-(73, 'Sepatu nike zoom pegasus', '/images/1608046462350-image.jpg,/images/1608046462356-image.jpg,/images/1608046462361-image.jpg,/images/1608046462365-image.jpg,/images/1608046462370-', 'Rizki sport', 'Nike zoom pegasus 35 turbo 2 premium haigt Quality Made in Vietnam', 399000, 3, 0, 5, 'White', 25, 10, NULL, '2020-12-15 23:34:22.397000', '2020-12-15 23:34:22.397000'),
-(74, 'Sepatu nike zoom pegasus 2', '/images/1608102029365-image.jpg,/images/1608102029485-image.jpg,/images/1608102029554-image.jpg,/images/1608102029558-image.jpg,/images/1608102029575-', 'Rizki sport', 'Nike zoom pegasus 35 turbo 2 premium haigt Quality Made in Vietnam', 399000, 3, 0, 5, 'White', 25, 10, NULL, '2020-12-16 15:00:29.685000', '2020-12-16 15:00:29.685000'),
-(75, 'Sepatu nike zoom pegasus 2', '/images/1608102074335-image.jpg,/images/1608102074338-image.jpg,/images/1608102074343-image.jpg,/images/1608102074345-image.jpg,/images/1608102074352-', 'Rizki sport', 'Nike zoom pegasus 35 turbo 2 premium haigt Quality Made in Vietnam', 399000, 3, 0, 5, 'White', 25, 10, NULL, '2020-12-16 15:01:14.433000', '2020-12-16 15:01:14.433000'),
-(76, 'T-shirt Astronaut', '/images/1608131786394-image.jpg,/images/1608131786521-image.jpg,/images/1608131786537-image.jpg,/images/1608131786546-image.jpg,/images/1608131786553-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 504000, 1, 0, 5, 'Red', 0, 10, NULL, '2020-12-16 23:16:26.598000', '2020-12-16 23:16:26.598000'),
-(77, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608131841131-image.jpg,/images/1608131841261-image.jpg,/images/1608131841469-image.jpg,/images/1608131841546-image.jpg,/images/1608131841604-', 'Ammo cloth', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 32900, 1, 0, 4, 'black', 0, 10, NULL, '2020-12-16 23:17:21.616000', '2020-12-16 23:17:21.616000'),
-(78, 'celana sirwal ripstok', '/images/1608135809778-image.jpg,/images/1608135809818-image.jpg,/images/1608135809841-image.jpg,/images/1608135809894-image.jpg,/images/1608135809964-', 'Ammo cloth', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 2, 0, 5, 'Red', 0, 10, NULL, '2020-12-17 00:23:30.038000', '2020-12-17 00:23:30.038000'),
-(79, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608136326675-image.jpg,/images/1608136326678-image.jpg,/images/1608136326683-image.jpg,/images/1608136326685-image.jpg,/images/1608136326692-', 'Ubah cloth', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 504000, 1, 0, 4, 'Red', 0, 10, NULL, '2020-12-17 00:32:06.710000', '2020-12-17 00:32:06.710000'),
-(80, 'Celana Jeans Panjang Pensil Pria', '/images/1608136734610-image.jpg,/images/1608136734621-image.jpg,/images/1608136734625-image.jpg,/images/1608136734628-image.jpg,/images/1608136734631-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 32900, 2, 0, 4, 'black', 0, 10, 21, '2020-12-17 00:38:54.668000', '2020-12-17 00:38:54.668000'),
-(81, 'T-shirt Astronaut', '/images/1608145511573-image.jpg,/images/1608145511581-image.jpg,/images/1608145511607-image.jpg,/images/1608145511629-image.jpg,/images/1608145511647-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 1, 0, 4, 'black', 0, 10, 21, '2020-12-17 03:05:11.672000', '2020-12-17 03:05:11.672000'),
-(82, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608171992923-image.jpg,/images/1608171992981-image.jpg,/images/1608171993012-image.jpg,/images/1608171993093-image.jpg,/images/1608171993104-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 1, 0, 4, 'Red', 0, 10, 21, '2020-12-17 10:26:33.122000', '2020-12-17 10:26:33.122000');
+INSERT INTO `items` (`id`, `product_name`, `image`, `product_brand`, `product_description`, `product_price`, `category_id`, `product_rating`, `product_color`, `size`, `product_qty`, `user_id`, `created_at`, `updated_at`) VALUES
+(69, 'kaos baju polos 30s cotton bamboo', '/images/1608017062803-image.jpg,/images/1608017062808-image.jpg,/images/1608017062820-image.jpg,/images/1608017062822-image.jpg,/images/1608017062827-', 'PolosBambu', 'Sekarang udah ga usah pusing mikirin kaos keren dengan gambar dan tulisan apaa, cukup pakai kaos polos udah keren dan kekinian. Apalagi pakai kaos polos bahan katun bambu,selain sudah keren kaosnya beda sama yang lainnya karena bahan katun bambu mempunyai antibakterial alami dan nyaman dipakai.', 50000, 1, 4, 'White', 20, 10, NULL, '2020-12-15 15:24:22.888000', '2020-12-15 15:24:22.888000'),
+(70, 'Baju tidur wanita/piyama wanita/baju tidur murah', '/images/1608017575800-image.jpg,/images/1608017575814-image.jpg,/images/1608017575818-image.jpg,/images/1608017575828-image.jpg,/images/1608017575837-', 'Distro Polosan', 'Ada harga ada kualitas.\nBeda bahan beda harga, jangan samakan dengan yang biasa', 50000, 1, 3, 'Pink', 20, 10, NULL, '2020-12-15 15:32:55.890000', '2020-12-15 15:32:55.890000'),
+(71, 'Celana Panjang Chino Pria Premium Quality / Celana Kerja Pria ', '/images/1608017954292-image.jpg,/images/1608017954379-image.jpg,/images/1608017954383-image.jpg,/images/1608017954386-image.jpg,/images/1608017954389-', 'Simpleclothes.id', 'JAMINAN HARGA TERMURAH , DAN BAHAN \"PREMIUM QUALITY\"', 75000, 2, 4, 'Black', 27, 10, NULL, '2020-12-15 15:39:14.410000', '2020-12-15 15:39:14.410000'),
+(72, 'Techdoo Impor Sepatu Sneakers Ringan', '/images/1608044257404-image.jpg,/images/1608044257413-image.jpg,/images/1608044257421-image.jpg,/images/1608044257424-image.jpg,/images/1608044257434-', 'Techdoo', 'Dear Pembeli, mohon mencantumkan warna dan ukuran yang diinginkan di kolom catatan pembeli, jika tidak kita akan kirimkan warna acak.\n', 180000, 3, 5, 'White', 27, 10, NULL, '2020-12-15 22:57:37.475000', '2020-12-15 22:57:37.475000'),
+(73, 'Sepatu nike zoom pegasus', '/images/1608046462350-image.jpg,/images/1608046462356-image.jpg,/images/1608046462361-image.jpg,/images/1608046462365-image.jpg,/images/1608046462370-', 'Rizki sport', 'Nike zoom pegasus 35 turbo 2 premium haigt Quality Made in Vietnam', 399000, 3, 5, 'White', 25, 10, NULL, '2020-12-15 23:34:22.397000', '2020-12-15 23:34:22.397000'),
+(74, 'Sepatu nike zoom pegasus 2', '/images/1608102029365-image.jpg,/images/1608102029485-image.jpg,/images/1608102029554-image.jpg,/images/1608102029558-image.jpg,/images/1608102029575-', 'Rizki sport', 'Nike zoom pegasus 35 turbo 2 premium haigt Quality Made in Vietnam', 399000, 3, 5, 'White', 25, 10, NULL, '2020-12-16 15:00:29.685000', '2020-12-16 15:00:29.685000'),
+(75, 'Sepatu nike zoom pegasus 2', '/images/1608102074335-image.jpg,/images/1608102074338-image.jpg,/images/1608102074343-image.jpg,/images/1608102074345-image.jpg,/images/1608102074352-', 'Rizki sport', 'Nike zoom pegasus 35 turbo 2 premium haigt Quality Made in Vietnam', 399000, 3, 5, 'White', 25, 10, NULL, '2020-12-16 15:01:14.433000', '2020-12-16 15:01:14.433000'),
+(76, 'T-shirt Astronaut', '/images/1608131786394-image.jpg,/images/1608131786521-image.jpg,/images/1608131786537-image.jpg,/images/1608131786546-image.jpg,/images/1608131786553-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 504000, 1, 5, 'Red', 0, 10, NULL, '2020-12-16 23:16:26.598000', '2020-12-16 23:16:26.598000'),
+(77, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608131841131-image.jpg,/images/1608131841261-image.jpg,/images/1608131841469-image.jpg,/images/1608131841546-image.jpg,/images/1608131841604-', 'Ammo cloth', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 32900, 1, 4, 'black', 0, 10, NULL, '2020-12-16 23:17:21.616000', '2020-12-16 23:17:21.616000'),
+(78, 'celana sirwal ripstok', '/images/1608135809778-image.jpg,/images/1608135809818-image.jpg,/images/1608135809841-image.jpg,/images/1608135809894-image.jpg,/images/1608135809964-', 'Ammo cloth', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 2, 5, 'Red', 0, 10, NULL, '2020-12-17 00:23:30.038000', '2020-12-17 00:23:30.038000'),
+(79, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608136326675-image.jpg,/images/1608136326678-image.jpg,/images/1608136326683-image.jpg,/images/1608136326685-image.jpg,/images/1608136326692-', 'Ubah cloth', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 504000, 1, 4, 'Red', 0, 10, NULL, '2020-12-17 00:32:06.710000', '2020-12-17 00:32:06.710000'),
+(80, 'Celana Jeans Panjang Pensil Pria', '/images/1608136734610-image.jpg,/images/1608136734621-image.jpg,/images/1608136734625-image.jpg,/images/1608136734628-image.jpg,/images/1608136734631-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 32900, 2, 4, 'black', 0, 10, 21, '2020-12-17 00:38:54.668000', '2020-12-17 00:38:54.668000'),
+(81, 'T-shirt Astronaut', '/images/1608145511573-image.jpg,/images/1608145511581-image.jpg,/images/1608145511607-image.jpg,/images/1608145511629-image.jpg,/images/1608145511647-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 1, 4, 'black', 0, 10, 21, '2020-12-17 03:05:11.672000', '2020-12-17 03:05:11.672000'),
+(82, 'Islamic Mens Clothing Kaftan Shirt', '/images/1608171992923-image.jpg,/images/1608171992981-image.jpg,/images/1608171993012-image.jpg,/images/1608171993093-image.jpg,/images/1608171993104-', 'Zalora', 'Kemeja panjang sehingga bisa juga sebagai pengganti busana muslim pria yang sangat fashionable. Tidak tebalsehingga nyaman dikenakan saat udara panas', 75000, 1, 4, 'Red', 0, 10, 21, '2020-12-17 10:26:33.122000', '2020-12-17 10:26:33.122000');
 
 -- --------------------------------------------------------
 
@@ -447,6 +487,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `chats`
+--
+ALTER TABLE `chats`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `colors`
 --
 ALTER TABLE `colors`
@@ -502,13 +548,19 @@ ALTER TABLE `addresses`
 -- AUTO_INCREMENT for table `blacklist_tokens`
 --
 ALTER TABLE `blacklist_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `chats`
+--
+ALTER TABLE `chats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `colors`
@@ -526,7 +578,7 @@ ALTER TABLE `histories`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `items`
